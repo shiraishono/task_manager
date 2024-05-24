@@ -7,11 +7,6 @@
 | nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
-| first_name         | string | null: false               |
-| last_name          | string | null: false               |
-| first_name_kana    | string | null: false               |
-| last_name_kana     | string | null: false               |
-| birth_date         | date   | null: false               |
 
 ### Association
 - has_many :tasks
@@ -20,8 +15,8 @@
 
 | Column               | Type       | Options                         |
 | -------------------- | ---------- | ------------------------------- |
-| title                | string     | null: false                     |
-| user                 | references | null: false, foreign_key:true   |
+| text                 | string     | null: false                     |
+| user_id              | references | null: false, foreign_key:true   |
 | parent_task_id       | references | foreign_key:{ to_table::tasks } |
 
 ### Association
