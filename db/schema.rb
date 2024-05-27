@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_19_150726) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_27_074555) do
   create_table "tasks", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "user_id", null: false
@@ -34,8 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_19_150726) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "nickname"
   end
 
   add_foreign_key "tasks", "tasks", column: "parent_task_id"
