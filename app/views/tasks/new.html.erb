@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>タスク作成</title>
 </head>
 <body>
-  <h1>タスク作成</h1>
   <%= form_with model: @task, local: true do |form| %>
     <%= form.label :title, "タスク名" %>
     <%= form.text_field :title %><br>
-    
-    <%= form.label :user_id, "ユーザーID" %>
-    <%= form.number_field :user_id %><br>
-    
-    <%= form.label :parent_task_id, "親タスクID (オプション)" %>
-    <%= form.number_field :parent_task_id %><br>
-    
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <%= form.label :parent_task_id, "親タスク (オプション)" %>
+    <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true %><br>
+
     <%= form.submit "作成" %>
   <% end %>
 </body>
