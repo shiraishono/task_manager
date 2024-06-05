@@ -7,17 +7,19 @@
 <body>
   <% if user_signed_in? %>
     <%= link_to '新しいタスクを追加', new_task_path %>
+    <%= link_to 'タスクの管理', delete_tasks_path %>
   <% else %>
-    <p>タスクを作成するにはログインしてください。</p>
-    <%= link_to 'ログイン', new_user_session_path %>
+    <p>Please log in to create task</p>
   <% end %>
+
   <ul>
     <% @tasks.each do |task| %>
       <li>
         <strong><%= task.title %></strong>
-        <%= render partial: "tasks/task", locals: { task: task } %>
+        <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>
   </ul>
+
 </body>
 </html>

@@ -1,8 +1,0 @@
-<ul>
-  <% task.child_tasks.each do |child_task| %>
-    <li>
-      <strong><%= child_task.title %></strong>
-      <%= render partial: "tasks/task", locals: { task: child_task } %>
-    </li>
-  <% end %>
-</ul>

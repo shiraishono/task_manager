@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- タスクオプションを生成するメソッド -->
+  <% def task_options_for_select(tasks) %>
+    <% tasks.flat_map do |task| %>
+      <% option = [[task.title, task.id]] %>
+      <% if task.sub_tasks.any? %>
+        <% option += task_options_for_select(task.sub_tasks) %>
+      <% end %>
+      <% option %>
+    <% end %>
+  <% end %>
+
+  <!-- タスクの削除フォーム -->
+  <%= form_with url: delete_selected_task_path, method: :delete do %>
+    <div>
+      <%= label_tag :task_id, 'タスクを選択' %>
+      <%= select_tag :task_id, options_for_select(task_options_for_select(@tasks)) %>
+    </div>
+    <div>
+      <%= submit_tag '削除' %>
+    </div>
+  <% end %>
+
+  <!-- タスク一覧表示 -->
+  <ul>
+    <% @tasks.each do |task| %>
+      <li>
+        <strong><%= task.title %></strong>
+        <%= render partial: "tasks/index", locals: { task: task } %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'タスク一覧に戻る', tasks_path %>
+</body>
+</html>
+

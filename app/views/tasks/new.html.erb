@@ -8,13 +8,11 @@
   <%= form_with model: @task, local: true do |form| %>
     <%= form.label :title, "タスク名" %>
     <%= form.text_field :title %><br>
-
-    <%= form.hidden_field :user_id, value: current_user.id %>
-
-    <%= form.label :parent_task_id, "親タスク (オプション)" %>
-    <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true %><br>
-
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.label :parent_task_id, "親タスク (オプション)" %>
+      <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true %><br>
     <%= form.submit "作成" %>
   <% end %>
+  
 </body>
 </html>
