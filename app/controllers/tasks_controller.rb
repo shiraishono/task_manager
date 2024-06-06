@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:destroy]
 
   def index
-    @tasks = current_user&.tasks&.where(parent_task_id: nil)
+    @tasks = current_user&.tasks&.where(parent_task_id: nil) || []
   end
 
   def new
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   end
 
   def delete
-    @tasks = current_user.tasks&.where(parent_task_id: nil)
+    @tasks = current_user.tasks.where(parent_task_id: nil)
   end
 
   def delete_selected_task
