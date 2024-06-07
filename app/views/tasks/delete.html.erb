@@ -19,11 +19,11 @@
   <!-- タスクの削除フォーム -->
   <%= form_with url: delete_selected_task_path, method: :delete do %>
     <div>
-      <%= label_tag :task_id, 'タスクを選択' %>
+      <%= label_tag :task_id, 'Select task' %>
       <%= select_tag :task_id, options_for_select(task_options_for_select(@tasks)) %>
     </div>
     <div>
-      <%= submit_tag '削除' %>
+      <%= submit_tag 'Delete' %>
     </div>
   <% end %>
 
@@ -37,7 +37,7 @@
     <% end %>
   </ul>
 
-  <%= link_to 'タスク一覧に戻る', tasks_path %>
+  <%= link_to 'Return to task list', tasks_path %>
 </body>
 </html>
 

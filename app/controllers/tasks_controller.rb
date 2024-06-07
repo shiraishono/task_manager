@@ -3,11 +3,20 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:destroy]
 
   def index
-    @tasks = current_user&.tasks&.where(parent_task_id: nil) || []
+    if user_signed_in?
+      @tasks = current_user.tasks.where(parent_task_id: nil)
+    else
+      @tasks = []
+    end
   end
 
   def new
     @task = Task.new
+    if user_signed_in?
+      @tasks = current_user.tasks.where(parent_task_id: nil)
+    else
+      @tasks = []
+    end
   end
 
   def create
@@ -15,6 +24,11 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_path
     else
+      if user_signed_in?
+        @tasks = current_user.tasks.where(parent_task_id: nil)
+      else
+        @tasks = []
+      end
       render :new
     end
   end
@@ -26,7 +40,11 @@ class TasksController < ApplicationController
   end
 
   def delete
-    @tasks = current_user.tasks.where(parent_task_id: nil)
+    if user_signed_in?
+      @tasks = current_user.tasks.where(parent_task_id: nil)
+    else
+      @tasks = []
+    end
   end
 
   def delete_selected_task

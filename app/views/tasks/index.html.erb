@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
 </head>
 <body>
   <% if user_signed_in? %>
-    <%= link_to '新しいタスクを追加', new_task_path %>
-    <%= link_to 'タスクの管理', delete_tasks_path %>
+    <div class="task-actions">
+      <%= link_to 'Add new task', new_task_path, class: "task-action-button" %>
+      <%= link_to 'Delete task', delete_tasks_path, class: "task-action-button" %>
+    </div>
   <% else %>
-    <p>Please log in to create task</p>
+    <p class="login-message">Please log in to create task</p>
   <% end %>
 
-  <ul>
+  <ul class="task-list">
     <% @tasks.each do |task| %>
-      <li>
-        <strong><%= task.title %></strong>
+      <li class="task-item">
+        <strong class="task-title"><%= task.title %></strong>
         <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>
   </ul>
-
 </body>
 </html>

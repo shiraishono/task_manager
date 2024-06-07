@@ -1,8 +1,9 @@
-<ul>
+<ul class="task-subs">
   <% task.sub_tasks.each do |sub_task| %>
-    <li>
-      <strong><%= sub_task.title %></strong>
+    <li class="task-sub"style="list-style-type: none;">
+      <strong class="task-title"><%= sub_task.title %></strong>
       <%= render partial: "tasks/index", locals: { task: sub_task } %>
     </li>
   <% end %>
 </ul>
+

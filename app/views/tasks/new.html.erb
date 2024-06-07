@@ -6,14 +6,23 @@
 </head>
 <body>
   <%= form_with model: @task, local: true do |form| %>
-    <%= form.label :title, "タスク名" %>
+    <%= form.label :title, "New task" %>
     <%= form.text_field :title %><br>
       <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.label :parent_task_id, "親タスク (オプション)" %>
+      <%= form.label :parent_task_id, "Select task (option)" %>
       <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true %><br>
-    <%= form.submit "作成" %>
+    <%= form.submit "Add" %>
   <% end %>
+
+  <ul>
+    <% @tasks.each do |task| %>
+      <li>
+        <strong><%= task.title %></strong>
+        <%= render partial: "tasks/index", locals: { task: task } %>
+      </li>
+    <% end %>
+  </ul>
   
-  <%= link_to 'タスク一覧に戻る', tasks_path %>
+  <%= link_to 'Return to task list', tasks_path %>
 </body>
 </html>

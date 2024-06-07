@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+/* Home_page styles */
+header.header div.header__bar.row h1.grid-1 a.logo {
+  font-size: 30px;
+  line-height: 30px;
+  margin-left: 20px;
+  float: left;
+  text-decoration: none;
+  border-bottom: 2px solid #57C3E9; 
+}
+
+header.header div.header__bar.row h1.grid-1 a.logo:hover,
+header.header div.header__bar.row h1.grid-1 a.logo:visited,
+header.header div.header__bar.row h1.grid-1 a.logo:focus,
+header.header div.header__bar.row h1.grid-1 a.logo:active {
+  color: rgb(29, 74, 158); 
+}
+
+.row .grid-1 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
+}
+
+header.header div.header__bar.row div.grid-1 a.post {
+  width: 100px;
+  display: inline-block;
+  margin-left: 20px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.btn, header.header div.header__bar.row div.grid-1 a.post {
+  line-height: 30px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100px;
+  display: inline-block;
+  background-color: rgb(249, 247, 254);
+}
+
+.login-message {
+  font-size: 30px; 
+  color: #727171; 
+  text-align: center; 
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 75vh; 
+}
+
+/* log_in sign_in styles */
+.container {
+  position: absolute;
+  top: 100px;
+  left: 485px;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 2px solid #57C3E9; 
+  border-radius: 30px;
+  background-color: rgb(247, 254, 242); 
+}
+
+.container h2 {
+  color: rgb(29, 74, 158); 
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #57C3E9; 
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-weight: bold;
+  color: #57C3E9; 
+  display: block;
+}
+
+.field em {
+  color: #999; 
+  font-size: 0.9em;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  border-radius: 30px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.actions input[type="submit"] {
+  background-color: #57C3E9; 
+  color: #fff; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Task list styles */
+.task-actions {
+  margin: 20px;
+  text-align: center;
+}
+
+.task-action-button {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #57C3E9;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+.task-list {
+  padding: 0;
+  padding-top: 10px;
+
+}
+
+.task-item {
+  color: #727171;
+  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  padding: 35px;
+  border: 2px solid #918f8f;
+  border-radius: 10px;
+  margin: 10px;
+  display: block; /* タスクリストの項目をブロック表示に変更 */
+}
+
+.task-item:before {
+  content: "○";
+  margin-right: 10px;
+  color: #57C3E9;
+}
+
+.task-sub:before {
+  content: "○";
+  margin-right: 10px;
+  color: #57C3E9;
+}
