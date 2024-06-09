@@ -115,32 +115,32 @@ header.header div.header__bar.row div.grid-1 a.post {
 /* Task list styles */
 .task-actions {
   margin: 20px;
-  text-align: center;
 }
 
 .task-action-button {
+  line-height: 25px;
   display: inline-block;
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 14px;
+  margin:  14px;
+  padding: 10px 30px;
+  font-size: 15px;
   color: #fff;
   background-color: #57C3E9;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
 }
 
 
 .task-list {
   padding: 0;
-  padding-top: 10px;
+  padding-top: 0px;
 
 }
 
 .task-item {
   color: #727171;
   font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
-  padding: 35px;
+  padding: 30px;
   border: 2px solid #918f8f;
   border-radius: 10px;
   margin: 10px;
@@ -157,4 +157,60 @@ header.header div.header__bar.row div.grid-1 a.post {
   content: "○";
   margin-right: 10px;
   color: #57C3E9;
+}
+
+.user_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_info {
+  list-style: none; 
+  padding: 0;
+  margin: 1;
+  margin-left: 10px;
+  display: inline-block;
+  line-height: 30px;
+  padding: 5px 20px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100px;
+  display: inline-block;
+  background-color: rgb(247, 254, 242); 
+  text-decoration: none; 
+  transition: none; 
+}
+
+.user_info-1 {
+  list-style: none; /* デフォルトのリストスタイルを無効にします */
+  padding: 0;
+  margin: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  line-height: 30px;
+  padding: 5px 20px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100px;
+  display: inline-block;
+  background-color: #f5f5ff; /* 背景色を淡い紫に設定 */
+  text-decoration: none; /* リンクの下線を削除 */
+  transition: none; /* アニメーションを無効にします */
+}
+
+.logout_button {
+  color: #57C3E9;
+  font-weight: bold;
+  border-radius: 100px;
+  display: inline-block;
+  background-color: #f5f5ff; /* 背景色を淡い紫に設定 */
+  text-decoration: none; /* リンクの下線を削除 */
 }
