@@ -22,7 +22,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to tasks_path
+      redirect_to new_task_path
     else
       if user_signed_in?
         @tasks = current_user.tasks.where(parent_task_id: nil)

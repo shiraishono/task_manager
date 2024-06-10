@@ -17,27 +17,29 @@
   <% end %>
 
   <!-- タスクの削除フォーム -->
-  <%= form_with url: delete_selected_task_path, method: :delete do %>
-    <div>
-      <%= label_tag :task_id, 'Select task' %>
-      <%= select_tag :task_id, options_for_select(task_options_for_select(@tasks)) %>
-    </div>
-    <div>
-      <%= submit_tag 'Delete' %>
-    </div>
-  <% end %>
+  <div class="container-1">
+    <%= form_with url: delete_selected_task_path, method: :delete do %>
+      <div>
+        <%= label_tag :task_id, "Select task" %>
+        <%= select_tag :task_id, options_for_select(task_options_for_select(@tasks)) %>
+      </div>
+      <div>
+        <%= submit_tag "Delete", class:"delete-btn" %>
+      </div>
+    <% end %>
+  </div>
 
   <!-- タスク一覧表示 -->
-  <ul>
+  <ul class="task-list-1">
     <% @tasks.each do |task| %>
-      <li>
+      <li class="task-item-1">
         <strong><%= task.title %></strong>
         <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>
   </ul>
 
-  <%= link_to 'Return to task list', tasks_path %>
+  <%= link_to 'Return to task list', tasks_path, class: "btn-2" %>
 </body>
 </html>
 

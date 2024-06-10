@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <%= form_with model: @task, local: true do |form| %>
-    <%= form.label :title, "New task" %>
-    <%= form.text_field :title %><br>
+    <div class="container-1">
+      <%= form.label :title, "New task" %><em>(12 characters max)</em>
+      <%= form.text_field :title %><br>
       <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.label :parent_task_id, "Select task (option)" %>
-      <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true %><br>
-    <%= form.submit "Add" %>
+      <%= form.label :parent_task_id, "Select task", class: "form-label" %>
+      <%= form.collection_select :parent_task_id, current_user.tasks, :id, :title, include_blank: true, class: "form-select" %><br>
+      <%= form.submit "Add", class: "add-btn" %>
+    </div>
   <% end %>
 
-  <ul>
+  <ul class="task-list-1">
     <% @tasks.each do |task| %>
-      <li>
+      <li class="task-item-1">
         <strong><%= task.title %></strong>
         <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>
   </ul>
   
-  <%= link_to 'Return to task list', tasks_path %>
+  <%= link_to 'Return to task list', tasks_path, class: "btn-2" %>
 </body>
 </html>
