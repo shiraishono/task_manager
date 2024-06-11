@@ -280,6 +280,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   margin-top: 10px;
 }
 
+/* ずれる場合がある */
 .btn-2{
   position: relative;
   top: 10px;
