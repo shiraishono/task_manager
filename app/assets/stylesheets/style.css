@@ -57,13 +57,12 @@ header.header div.header__bar.row div.grid-1 a.post {
 
 /* log_in sign_in styles */
 .container {
-  position: absolute;
-  top: 100px;
-  left: 485px;
+  position: relative;
+  top: 80px;
   text-align: center;
   width: 300px;
   margin: auto;
-  padding: 50px;
+  padding: 40px;
   border: 2px solid #57C3E9; 
   border-radius: 30px;
   background-color: rgb(247, 254, 242); 
@@ -110,6 +109,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 /* Task list styles */
