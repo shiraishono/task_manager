@@ -8,7 +8,7 @@
   <!-- タスクオプションを生成するメソッド -->
   <% def task_options_for_select(tasks) %>
     <% tasks.flat_map do |task| %>
-      <% option = [[task.title, task.id]] %>
+      <% option = [[task.text, task.id]] %>
       <% if task.sub_tasks.any? %>
         <% option += task_options_for_select(task.sub_tasks) %>
       <% end %>
@@ -33,7 +33,7 @@
   <ul class="task-list-1">
     <% @tasks.each do |task| %>
       <li class="task-item-1">
-        <strong><%= task.title %></strong>
+        <strong><%= task.text %></strong>
         <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>

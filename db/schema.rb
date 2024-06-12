@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_05_31_181656) do
   create_table "tasks", charset: "utf8", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "text", null: false
     t.bigint "user_id", null: false
     t.bigint "parent_task_id"
     t.datetime "created_at", null: false

@@ -18,7 +18,7 @@
   <ul class="task-list">
     <% @tasks.each do |task| %>
       <li class="task-item">
-        <strong class="task-title"><%= task.title %></strong>
+        <strong class="task-text"><%= task.text %></strong>
         <%= render partial: "tasks/index", locals: { task: task } %>
       </li>
     <% end %>
