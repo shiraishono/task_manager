@@ -296,7 +296,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   font-weight: bold;
   transition: none; 
   text-decoration: none;
-  max-width: 200px; /* new taskボックスの幅に合わせて調整 */
+  max-width: 170px; 
   width: 100%;
   text-align: center;
 }
