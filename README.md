@@ -9,7 +9,7 @@
 | encrypted_password | string | null: false               |
 
 ### Association
-- has_many :tasks
+- has_many :tasks, dependent: :destroy
 
 ## tasksテーブル（タスク管理機能）
 
@@ -21,5 +21,5 @@
 
 ### Association
 - belongs_to :user
-- has_many :sub_tasks, class_name: "Task", foreign_key: "parent_task_id"
+- has_many :sub_tasks, class_name: "Task", foreign_key: "parent_task_id", dependent: :destroy
 - belongs_to :parent_task, class_name: "Task", optional: true
