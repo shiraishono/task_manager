@@ -306,8 +306,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   font-weight: bold;
   color: #6e2638;
   margin-bottom: 10px;
-  margin-top: 0; /* 余白を消す */
-}
+  margin-top: 0; 
 
 .form-field {
   border-radius: 30px;
