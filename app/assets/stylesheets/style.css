@@ -319,7 +319,7 @@ header.header div.header__bar.row div.grid-1 a.post {
 
 .form-select {
   width: 100%;
-  max-width: 100%; /* 幅を親要素に合わせる */
+  max-width: 100%; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 30px;
