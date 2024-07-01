@@ -329,7 +329,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   font-size: 14px;
   color: #ac1d1d;
   background-color: #fff;
-  overflow: hidden; /* オーバーフローするテキストを隠す */
+  overflow: hidden; 
   text-overflow: ellipsis; /* 省略記号を表示する */
   white-space: nowrap; /* テキストを折り返さない */
 }
