@@ -330,7 +330,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   color: #ac1d1d;
   background-color: #fff;
   overflow: hidden; 
-  text-overflow: ellipsis; /* 省略記号を表示する */
+  text-overflow: ellipsis; 
   white-space: nowrap; /* テキストを折り返さない */
 }
 
