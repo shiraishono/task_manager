@@ -331,7 +331,7 @@ header.header div.header__bar.row div.grid-1 a.post {
   background-color: #fff;
   overflow: hidden; 
   text-overflow: ellipsis; 
-  white-space: nowrap; /* テキストを折り返さない */
+  white-space: nowrap; 
 }
 
 .form-select option {
